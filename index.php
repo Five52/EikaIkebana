@@ -1,6 +1,6 @@
 <?php
 require_once 'handler/twig.php';
 
-echo $twig->render('test.html.twig', [
+echo $twig->render('index.html.twig', [
 	'nom' => 'Evrard'
 ]);

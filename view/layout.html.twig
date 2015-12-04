@@ -9,11 +9,11 @@
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-	{% include('partials/header.html.twig') %}
-	{% block main %}{% endblock %}
-	{% include('partials/nav.html.twig') %}
-	<aside>
-	</aside>
-	{% include('partials/footer.html.twig') %}
+	{% include 'partials/header.html.twig' %}
+	<main>
+		{% block main %}{% endblock %}
+	</main>
+	{% include 'partials/nav.html.twig' %}
+	{% include 'partials/footer.html.twig' %}
 </body>
 </html>
