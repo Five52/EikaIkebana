@@ -10,10 +10,13 @@
 </head>
 <body>
 	{% include 'partials/header.html.twig' %}
-	<main>
-		{% block main %}{% endblock %}
-	</main>
-	{% include 'partials/nav.html.twig' %}
+	<div id="main-wrapper">
+		<main>
+			{% block main %}{% endblock %}
+		</main>
+		{% include 'partials/nav.html.twig' %}
+		{% include 'partials/aside.html.twig' %}
+	</div>
 	{% include 'partials/footer.html.twig' %}
 </body>
 </html>
