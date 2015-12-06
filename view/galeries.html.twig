@@ -1,0 +1,28 @@
+{# view/galeries.html.twig #}
+
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Galeries - {{ parent() }}
+{% endblock %}
+
+{% block main %}
+	<h2>Galeries</h2>
+	<div id="galeries">
+		<section>
+			{% for galerie in galeries if galerie.type == 'classique' %}
+				<p>{{ galerie.id }}, {{ galerie.nom }}</p>
+			{% endfor %}
+		</section>
+		<section>
+			{% for galerie in galeries if galerie.type == 'expositions' %}
+				<p>{{ galerie.id }}, {{ galerie.nom }}</p>
+			{% endfor %}
+		</section>
+		<section>
+			{% for galerie in galeries if galerie.type == 'stage' %}
+				<p>{{ galerie.id }}, {{ galerie.nom }}</p>
+			{% endfor %}
+		</section>
+	</div>
+{% endblock %}
