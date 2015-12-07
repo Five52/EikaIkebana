@@ -11,4 +11,4 @@ RedirectMatch 404 /vendor
 RedirectMatch 404 /view
 RewriteEngine on
 RewriteRule ^(.*)/$ $1 [R=301]
-RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?request=$1 [QSA]
+RewriteRule ^([a-zA-Z0-9\-\_\/]*)$ index.php?request=/$1 [QSA]
