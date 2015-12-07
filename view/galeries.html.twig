@@ -10,18 +10,26 @@
 	<h2>Galeries</h2>
 	<div id="galeries">
 		<section>
+			<blockquote>
+				" Les lotus flétris<br/>
+				L'étang semble misérable<br/>
+				Sous l'averse d'hiver. "
+				<footer>BUSON (1715 - 1783)</footer>
+			</blockquote>
+		</section>
+		<section>
 			{% for galerie in galeries if galerie.type == 'classique' %}
-				<p>{{ galerie.id }}, {{ galerie.nom }}</p>
+				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}</a></div>
 			{% endfor %}
 		</section>
 		<section>
-			{% for galerie in galeries if galerie.type == 'expositions' %}
-				<p>{{ galerie.id }}, {{ galerie.nom }}</p>
+			{% for galerie in galeries if galerie.type == 'exposition' %}
+				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}</a></div>
 			{% endfor %}
 		</section>
 		<section>
 			{% for galerie in galeries if galerie.type == 'stage' %}
-				<p>{{ galerie.id }}, {{ galerie.nom }}</p>
+				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}</a></div>
 			{% endfor %}
 		</section>
 	</div>

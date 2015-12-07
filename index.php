@@ -10,8 +10,7 @@ $request = isset($_GET['request']) ? $_GET['request'] : '/';
 if (array_key_exists($request, $routes)) {
 	$routes[$request]();
 } else {
-	echo 'La requête est ' . $request;
-	echo 'La racine est ' . ROOT;
+	erreur404();
 }
 
 function index() {
@@ -27,7 +26,7 @@ function activites() {
 function galeries() {
 	$galeries = ManagerHandler::get('galeries')->getGaleries();
 	echo Twig::create()->render('galeries.html.twig', [
-		'galeries', $galeries
+		'galeries' => $galeries
 	]);
 }
 

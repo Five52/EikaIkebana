@@ -160,11 +160,42 @@ main section article h4 {
 main section article h4 ~ * {
   padding-left: 15px;
 }
+main #galeries {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 20px;
+}
+main #galeries div {
+  text-align: center;
+}
+main #galeries div + div {
+  margin-top: 5px;
+}
+main #galeries div a {
+  display: block;
+  padding: 5px;
+  border: 1px solid #3f77dd;
+}
+main #galeries div a:link, main #galeries div a:visited {
+  text-decoration: none;
+  background-color: #C1D3F4;
+}
+main #galeries div a:hover {
+  background-color: #6a96e5;
+}
+main #galeries blockquote footer {
+  background-color: transparent;
+  text-align: right;
+  font-style: italic;
+}
 
 aside {
   order: 3;
   background-color: #C1D3F4;
   padding: 10px;
+}
+aside div {
+  text-align: center;
 }
 aside * + p, aside * + blockquote {
   margin-top: 15px;
@@ -257,6 +288,18 @@ hr {
   .photo {
     float: left;
     margin-right: 15px;
+  }
+
+  main #galeries {
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  main #galeries section:first-child {
+    order: 10;
+  }
+  main #galeries section + section {
+    margin-top: 0;
   }
 
   body {
