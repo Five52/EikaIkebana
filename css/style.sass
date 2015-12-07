@@ -21,7 +21,6 @@ body
 	font-family: sans-serif
 
 header
-	order: 1
 	background: darken($fond, 10%)
 
 	text-align: center
@@ -30,15 +29,20 @@ header
 
 	h1
 		font-family: 'neuropol', sans-serif
-		text-shadow: 0 2px 2px rgba(255,255,255,0.5)
+		text-shadow: 0 2px 2px rgba($titleBlur, 0.5), 0 -2px 2px rgba($titleBlur, 0.5)
 		&::before
 			display: block
 			font-size: 0
 			line-height: 0
 			content: url('logo.png')
 
+#main-wrapper
+	flex: 1
+	display: flex
+	flex-flow: column
+
 nav
-	order: 2
+	order: 1
 	background: $fond
 
 	h3
@@ -57,13 +61,14 @@ nav
 
 				&:link, &:visited
 					text-decoration: none
+					color: black
 					background-color: lighten($fond, 5%)
 
 				&:hover
 					background-color: $fond
+
 main
-	order: 3
-	flex: 1
+	order: 2
 
 	background: lighten($fond, 10%)
 	padding: 10px
@@ -83,12 +88,16 @@ main
 		&#expositions
 			ul
 				list-style: none
+				margin-left: 0
+
+				li + li
+					margin-top: 10bpx
 
 		h3
 			margin-bottom: 15px
 			padding-left: 5px
-			background-color: lighten(rgb(149,149,255), 15%)
-			border-left : 5px solid rgb(149,149,255)
+			background-color: lighten($fond2, 15%)
+			border-left : 5px solid $fond2
 			
 			& ~ *
 				padding-left: 15px
@@ -100,14 +109,33 @@ main
 				& ~ *
 					padding-left: 15px
 
+aside
+	order: 3
+	background-color: $fond
+	padding: 10px
+
+	p + p
+		margin-top: 15px
+
 footer
-	order: 4
 	text-align: center
-	background: $fond
+	background: darken($fond, 10%)
 	padding: 5px
 
-header, nav, main
+header, nav, main, aside
 	border-bottom: 2px solid rgba(0,0,0,0.1)
 
-footer, nav, main
+footer, nav, main, aside
 	border-top: 2px solid rgba(255,255,255,0.1)
+
+p
+	text-align: justify
+
+a
+	&:link, &:visited
+		color: $linkColor
+	&:hover
+		text-decoration: none
+
+abbr
+	cursor: help
