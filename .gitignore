@@ -1,2 +1,4 @@
 vendor/
+img/photos/
 *.swp
+composer.lock

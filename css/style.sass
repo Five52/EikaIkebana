@@ -19,6 +19,7 @@ body
 	flex-flow: column
 	min-height: 100vh
 	font-family: sans-serif
+	margin: 0 auto
 
 header
 	background: darken($fond, 10%)
@@ -49,6 +50,8 @@ nav
 	h3
 		padding: 7px
 	ul
+		display: flex
+		flex-flow: column
 		list-style: none
 		margin-left: 0
 
@@ -94,6 +97,7 @@ nav
 
 main
 	order: 2
+	flex: 1
 
 	background: lighten($fond, 10%)
 	padding: 10px
@@ -139,7 +143,7 @@ aside
 	background-color: $fond
 	padding: 10px
 
-	p + p
+	* + p, * + blockquote
 		margin-top: 15px
 
 footer
@@ -153,7 +157,7 @@ header, nav, main, aside
 footer, nav, main, aside
 	border-top: 2px solid rgba(255,255,255,0.1)
 
-p
+p, blockquote
 	text-align: justify
 
 a
@@ -162,5 +166,86 @@ a
 	&:hover
 		text-decoration: none
 
+img
+	max-width: 100%
+	height: auto
+	border-radius: 10px
+
 abbr
 	cursor: help
+
+@media (min-width: 768px)
+	body
+		margin: 10px
+		box-shadow: 0 0 10px black
+		background: linear-gradient(to top left, $fond, $fond2, darken($fond, 30%))
+	nav
+		border-top: none
+		h3
+			display: none
+		ul
+			display: flex
+			flex-direction: row
+
+			li
+				flex: 1
+
+				a
+					font-weight: bold
+					color: white
+					border-top: 2px solid rgba(255,255,255,0.1)
+					&:link, &:visited
+						background-color: $fond
+					&:hover
+						background-color: darken($fond, 10%)
+
+					border-right: 2px solid rgba(0,0,0,0.1)
+				+ li
+					margin-top: 0
+
+					a
+						border-left: 2px solid rgba(255,255,255,0.1)
+
+						&:hover
+							border-left: 2px solid darken($fond, 10%)
+
+				&:last-child a
+					border-right: none
+
+	body
+		border-radius: 10px
+	header
+		border-radius: 10px 10px 0 0
+	footer
+		border-radius: 0 0 10px 10px
+
+@media (min-width: 1024px)
+	
+	header
+		height: 162px
+		overflow: hidden
+		background: url('img/banniere.png') no-repeat center darken($fond, 10%)
+		h1::before
+			height: 162px
+			content: " "
+
+
+	#main-wrapper
+		flex-flow: row wrap
+	
+	nav
+		flex: 0 1 100%
+
+	main
+		flex: 1
+		height: 100%
+		border-right: 2px solid rgba(0,0,0,0.1)
+
+	aside
+		flex: 0 1 200px
+		border-left: 2px solid rgba(255,255,255,0.1)
+
+@media (min-width: 1280px)
+	body
+		max-width: 1260px
+		margin: 10px auto

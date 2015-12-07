@@ -48,7 +48,7 @@ $(function() {
 	navigation();
 	$(window).on('resize', navigation);
 
-	$('header h1').css('cursor', 'pointer').on('click', function(event) {
+	$('header').css('cursor', 'pointer').on('click', function(event) {
 		window.location = $('#menu_general a:first-of-type').attr('href');
 	});
 });

@@ -32,6 +32,7 @@ body {
   flex-flow: column;
   min-height: 100vh;
   font-family: sans-serif;
+  margin: 0 auto;
 }
 
 header {
@@ -65,6 +66,8 @@ nav h3 {
   padding: 7px;
 }
 nav ul {
+  display: flex;
+  flex-flow: column;
   list-style: none;
   margin-left: 0;
 }
@@ -108,6 +111,7 @@ nav #menu_general_button.developpe {
 
 main {
   order: 2;
+  flex: 1;
   background: #ecf2fc;
   padding: 10px;
 }
@@ -150,7 +154,7 @@ aside {
   background-color: #C1D3F4;
   padding: 10px;
 }
-aside p + p {
+aside * + p, aside * + blockquote {
   margin-top: 15px;
 }
 
@@ -168,7 +172,7 @@ footer, nav, main, aside {
   border-top: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-p {
+p, blockquote {
   text-align: justify;
 }
 
@@ -179,6 +183,106 @@ a:hover {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 abbr {
   cursor: help;
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 10px;
+    box-shadow: 0 0 10px black;
+    background: linear-gradient(to top left, #C1D3F4, #9595ff, #3f77dd);
+  }
+
+  nav {
+    border-top: none;
+  }
+  nav h3 {
+    display: none;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+  nav ul li {
+    flex: 1;
+  }
+  nav ul li a {
+    font-weight: bold;
+    color: white;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  nav ul li a:link, nav ul li a:visited {
+    background-color: #C1D3F4;
+  }
+  nav ul li a:hover {
+    background-color: #96b4ec;
+  }
+  nav ul li + li {
+    margin-top: 0;
+  }
+  nav ul li + li a {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  nav ul li + li a:hover {
+    border-left: 2px solid #96b4ec;
+  }
+  nav ul li:last-child a {
+    border-right: none;
+  }
+
+  body {
+    border-radius: 10px;
+  }
+
+  header {
+    border-radius: 10px 10px 0 0;
+  }
+
+  footer {
+    border-radius: 0 0 10px 10px;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    height: 162px;
+    overflow: hidden;
+    background: url("img/banniere.png") no-repeat center #96b4ec;
+  }
+  header h1::before {
+    height: 162px;
+    content: " ";
+  }
+
+  #main-wrapper {
+    flex-flow: row wrap;
+  }
+
+  nav {
+    flex: 0 1 100%;
+  }
+
+  main {
+    flex: 1;
+    height: 100%;
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+  }
+
+  aside {
+    flex: 0 1 200px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+  }
+}
+@media (min-width: 1280px) {
+  body {
+    max-width: 1260px;
+    margin: 10px auto;
+  }
 }
