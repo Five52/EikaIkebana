@@ -2,6 +2,8 @@
 require_once 'handler/twig.php';
 require_once 'handler/routes.php';
 require_once 'handler/saisons.php';
+require_once 'config/DB.class.php';
+require_once 'handler/ManagerHandler.class.php';
 
 $request = isset($_GET['request']) ? $_GET['request'] : '/';
 
@@ -23,7 +25,10 @@ function activites() {
 }
 
 function galeries() {
-	echo Twig::create()->render('galeries.html.twig');
+	$galeries = ManagerHandler::get('galeries')->getGaleries();
+	echo Twig::create()->render('galeries.html.twig', [
+		'galeries', $galeries
+	]);
 }
 
 function partager_lart() {
