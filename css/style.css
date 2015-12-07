@@ -242,6 +242,7 @@ hr {
 
 @media (min-width: 768px) {
   body {
+    min-height: calc(100vh - 20px);
     margin: 10px;
     box-shadow: 0 0 10px black;
     background: linear-gradient(to top left, #C1D3F4, #9595ff, #3f77dd);
@@ -290,6 +291,9 @@ hr {
     margin-right: 15px;
   }
 
+  main {
+    height: 100%;
+  }
   main #galeries {
     flex-flow: row;
     justify-content: space-around;
@@ -335,7 +339,6 @@ hr {
 
   main {
     flex: 1;
-    height: 100%;
     border-right: 2px solid rgba(0, 0, 0, 0.1);
   }
   main #frise_presentation {
