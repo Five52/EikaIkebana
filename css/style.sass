@@ -34,7 +34,7 @@ header
 			display: block
 			font-size: 0
 			line-height: 0
-			content: url('logo.png')
+			content: url('img/logo.png')
 
 #main-wrapper
 	flex: 1
@@ -42,6 +42,7 @@ header
 	flex-flow: column
 
 nav
+	position: relative
 	order: 1
 	background: $fond
 
@@ -66,6 +67,30 @@ nav
 
 				&:hover
 					background-color: $fond
+
+	> :first-child
+		position: relative
+		z-index: 20
+	
+	.button
+		position: absolute
+		z-index: 10
+		top: 0
+		right: 0
+
+		width: 48px
+		height: 34px
+
+		transition: 0.4s
+
+	#menu_general_button
+		@extend .button
+		background: url("img/icon_menu_hamburger.png") center no-repeat
+		transform: rotate(0deg)
+
+		&.developpe
+			background-image: url("img/icon_menu_minus.png")
+			transform: rotate(-180deg)
 
 main
 	order: 2
