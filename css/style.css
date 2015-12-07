@@ -212,9 +212,24 @@ aside * + p, aside * + blockquote {
 }
 
 footer {
-  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  font-size: 13px;
   background: #96b4ec;
+}
+footer ul {
+  list-style: none;
+  margin-left: 0;
   padding: 5px;
+}
+footer section {
+  flex: 1;
+  padding: 5px 15px;
+}
+footer section:last-child p {
+  padding: 5px;
+  text-align: justify;
 }
 
 header, nav, main, aside {
@@ -319,6 +334,20 @@ hr {
     margin-top: 0;
   }
 
+  footer {
+    border-top: none;
+  }
+  footer section {
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  footer section + section {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  footer section:last-child {
+    border-right: none;
+  }
+
   body {
     border-radius: 10px;
   }
@@ -329,6 +358,7 @@ hr {
 
   footer {
     border-radius: 0 0 10px 10px;
+    flex-flow: row;
   }
 }
 @media (min-width: 1024px) {

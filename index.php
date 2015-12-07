@@ -77,6 +77,10 @@ function partager_lart() {
 	echo Twig::create()->render('partager_lart.html.twig');
 }
 
+function archives() {
+	echo Twig::create()->render('archives.html.twig');
+}
+
 function erreur404() {
 	echo Twig::create()->render('404.html.twig');
 }

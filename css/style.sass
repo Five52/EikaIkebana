@@ -198,9 +198,24 @@ aside
 		margin-top: 15px
 
 footer
-	text-align: center
+	display: flex
+	flex-flow: row wrap
+	justify-content: space-around
+	font-size: 13px
 	background: darken($fond, 10%)
-	padding: 5px
+
+	ul
+		list-style: none
+		margin-left: 0
+		padding: 5px
+
+	section
+		flex: 1
+		padding: 5px 15px
+
+		&:last-child p
+			padding: 5px
+			text-align: justify
 
 header, nav, main, aside
 	border-bottom: 2px solid rgba(0,0,0,0.1)
@@ -285,12 +300,26 @@ hr
 					order: 10
 				+ section
 					margin-top: 0
+
+	footer
+		border-top: none
+		section
+			border-top: 2px solid rgba(255,255,255,0.1)
+			border-right: 2px solid rgba(0,0,0,0.1)
+
+			+ section
+				border-left: 2px solid rgba(255,255,255,0.1)
+
+			&:last-child
+				border-right: none
+
 	body
 		border-radius: 10px
 	header
 		border-radius: 10px 10px 0 0
 	footer
 		border-radius: 0 0 10px 10px
+		flex-flow: row
 
 @media (min-width: 1024px)
 
