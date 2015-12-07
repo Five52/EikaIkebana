@@ -1,19 +1,9 @@
 <?php
 require_once 'handler/twig.php';
-
-$dateCourante = new DateTime();
-$annee = date('Y');
-$datePrintemps = new DateTime($annee.'-02-15');
-$dateEte = new DateTime($annee.'-06-01');
-$dateHiver = new DateTime($annee.'-11-15');
-
-if ($dateCourante >= $datePrintemps && $dateCourante < $dateEte)
-	$saison = 'printemps' ;
-elseif ($dateCourante >= $dateEte && $dateCourante < $dateHiver)
-	$saison = 'ete';
-else
-	$saison = 'hiver';
+require_once 'routes.php';
+require_once 'saisons.php';
 
 echo $twig->render('partager_lart.html.twig', [
-	'saison' => 'ete'
+	'saison' => 'ete',
+	'rqt' => $_GET['request']
 ]);
