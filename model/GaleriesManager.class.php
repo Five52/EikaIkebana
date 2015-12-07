@@ -19,4 +19,17 @@ class GaleriesManager extends AbstractManager {
 
 		return (!empty($galeries)) ? $galeries : null;
 	}
+
+	public function get($id) {
+		$req = 'select * from Galerie where id = :id';
+		$stmt = $this->pdo->prepare($req);
+		$data = [
+			'id' => $id
+		];
+		$stmt->execute($data);
+		$res = $stmt->fetch();
+		$stmt->closeCursor();
+
+		return (!empty($res)) ? new Galerie($res) : null;
+	}
 }

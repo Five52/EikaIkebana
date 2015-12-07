@@ -188,6 +188,16 @@ main #galeries blockquote footer {
   text-align: right;
   font-style: italic;
 }
+main #mini-galerie {
+  width: 100%;
+  height: 187px;
+  overflow: auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+main #grande_photo {
+  text-align: center;
+}
 
 aside {
   order: 3;

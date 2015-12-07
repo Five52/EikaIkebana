@@ -1,12 +1,13 @@
 <?php
 
-// Classe représentant une Galerie
-class Galerie {
+// Classe représentant une photo
+class Photo {
 
 	protected $id;
-	protected $nom;
-	protected $date;
-	protected $type;
+	protected $source;
+	protected $sourceMiniature;
+	protected $alt;
+	protected $titre;
 
 	public function __construct(array $valeurs) {
 		$this->hydrate($valeurs);
@@ -34,25 +35,32 @@ class Galerie {
 	public function setId($id) {
 		$this->id = $id;
 	}
-
-	public function getNom() {
-		return $this->nom;
+	
+	public function getSource() {
+		return $this->source;
 	}
-	public function setNom($nom) {
-		$this->nom = $nom;
-	}
-
-	public function getDate() {
-		return $this->date;
-	}
-	public function setDate($date) {
-		$this->date = ($date != '0000-00-00') ? new DateTime($date) : null;
+	public function setSource($source) {
+		$this->source = $source;
 	}
 
-	public function getType() {
-		return $this->type;
+	public function getSourceMiniature() {
+		return $this->sourceMiniature;
 	}
-	public function setType($type) {
-		$this->type = $type;
+	public function setSourceMiniature($sourceMiniature) {
+		$this->sourceMiniature = $sourceMiniature;
+	}
+
+	public function getAlt() {
+		return $this->alt;
+	}
+	public function setAlt($alt) {
+		$this->alt = $alt;
+	}
+
+	public function getTitre() {
+		return $this->titre;
+	}
+	public function setTitre($titre) {
+		$this->titre = $titre;
 	}
 }

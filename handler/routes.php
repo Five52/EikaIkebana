@@ -4,6 +4,6 @@ $routes = [
 	'/' => 'index',
 	'/activites' => 'activites',
 	'/galeries' => 'galeries',
-	'/galeries/value' => 'galerie',
+	'/galeries/{id}' => 'galerie',
 	'/partager-lart' => 'partager_lart'
 ];

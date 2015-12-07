@@ -19,17 +19,17 @@
 		</section>
 		<section>
 			{% for galerie in galeries if galerie.type == 'classique' %}
-				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}</a></div>
+				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
 			{% endfor %}
 		</section>
 		<section>
 			{% for galerie in galeries if galerie.type == 'exposition' %}
-				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}</a></div>
+				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
 			{% endfor %}
 		</section>
 		<section>
 			{% for galerie in galeries if galerie.type == 'stage' %}
-				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}</a></div>
+				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
 			{% endfor %}
 		</section>
 	</div>
