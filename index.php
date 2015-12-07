@@ -14,6 +14,6 @@ elseif ($dateCourante >= $dateEte && $dateCourante < $dateHiver)
 else
 	$saison = 'hiver';
 
-echo $twig->render('index.html.twig', [
+echo $twig->render('partager_lart.html.twig', [
 	'saison' => 'ete'
 ]);
