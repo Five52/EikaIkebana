@@ -229,6 +229,9 @@ p, blockquote {
   text-align: justify;
 }
 
+a {
+  transition: 0.3s;
+}
 a:link, a:visited {
   color: #00008d;
 }
