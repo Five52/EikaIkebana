@@ -217,9 +217,11 @@ footer
 		flex: 1
 		padding: 5px 15px
 
-		&:last-child p
-			padding: 5px
-			text-align: justify
+		&:last-child
+			flex: 1 1 100%
+			p
+				padding: 5px
+				text-align: justify
 
 header, nav, main, aside
 	border-bottom: 2px solid rgba(0,0,0,0.1)
@@ -327,6 +329,7 @@ hr
 				border-left: 2px solid rgba(255,255,255,0.1)
 
 			&:last-child
+				flex: 1 1 0%
 				border-right: none
 
 	body
@@ -365,6 +368,7 @@ hr
 	aside
 		width: 200px
 		border-left: 2px solid rgba(255,255,255,0.1)
+		padding-top: 40px
 
 		> div
 			display: initial

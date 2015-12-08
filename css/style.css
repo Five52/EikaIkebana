@@ -231,6 +231,9 @@ footer section {
   flex: 1;
   padding: 5px 15px;
 }
+footer section:last-child {
+  flex: 1 1 100%;
+}
 footer section:last-child p {
   padding: 5px;
   text-align: justify;
@@ -365,6 +368,7 @@ hr {
     border-left: 2px solid rgba(255, 255, 255, 0.1);
   }
   footer section:last-child {
+    flex: 1 1 0%;
     border-right: none;
   }
 
@@ -411,6 +415,7 @@ hr {
   aside {
     width: 200px;
     border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-top: 40px;
   }
   aside > div {
     display: initial;
