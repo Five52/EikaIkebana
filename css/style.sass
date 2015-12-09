@@ -157,20 +157,23 @@ main
 		flex-flow: column
 		margin-bottom: 20px
 
-		div
-			text-align: center
-			+ div
-				margin-top: 5px
+		> div
+			margin-top: 20px
 
-			a
-				display: block
-				padding: 5px
-				border: 1px solid darken($fond, 30%)
-				&:link, &:visited
-					text-decoration: none
-					background-color: $fond
-				&:hover
-					background-color: darken($fond, 20%)
+			div
+				text-align: center
+				+ div
+					margin-top: 5px
+
+				a
+					display: block
+					padding: 5px
+					border: 1px solid darken($fond, 30%)
+					&:link, &:visited
+						text-decoration: none
+						background-color: $fond
+					&:hover
+						background-color: darken($fond, 20%)
 
 		blockquote footer
 			background-color: transparent

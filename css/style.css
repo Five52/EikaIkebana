@@ -168,22 +168,25 @@ main #galeries {
   flex-flow: column;
   margin-bottom: 20px;
 }
-main #galeries div {
+main #galeries > div {
+  margin-top: 20px;
+}
+main #galeries > div div {
   text-align: center;
 }
-main #galeries div + div {
+main #galeries > div div + div {
   margin-top: 5px;
 }
-main #galeries div a {
+main #galeries > div div a {
   display: block;
   padding: 5px;
   border: 1px solid #3f77dd;
 }
-main #galeries div a:link, main #galeries div a:visited {
+main #galeries > div div a:link, main #galeries > div div a:visited {
   text-decoration: none;
   background-color: #C1D3F4;
 }
-main #galeries div a:hover {
+main #galeries > div div a:hover {
   background-color: #6a96e5;
 }
 main #galeries blockquote footer {
