@@ -355,6 +355,7 @@ hr {
     border-top: none;
   }
   footer section {
+    flex: initial;
     border-top: 2px solid rgba(255, 255, 255, 0.1);
     border-right: 2px solid rgba(0, 0, 0, 0.1);
   }
@@ -362,7 +363,6 @@ hr {
     border-left: 2px solid rgba(255, 255, 255, 0.1);
   }
   footer section:last-child {
-    flex: 1 1 0%;
     border-right: none;
   }
 
@@ -371,9 +371,14 @@ hr {
   }
 }
 @media (min-width: 1024px) {
-  header, nav, main, aside, footer {
+  header, nav, aside, footer {
     padding-left: calc((100% - 1024px) / 2);
     padding-right: calc((100% - 1024px) / 2);
+  }
+
+  main {
+    padding-left: calc((100% - 1024px) / 2 + 10px);
+    padding-right: calc((100% - 1024px) / 2 + 10px);
   }
 
   nav ul li:first-child {
