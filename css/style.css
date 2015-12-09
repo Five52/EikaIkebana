@@ -35,10 +35,15 @@ body {
   margin: 0 auto;
 }
 
+.width-fix {
+  width: 100%;
+}
+
 header {
-  background: #96b4ec;
-  text-align: center;
+  order: 1;
   padding: 10px;
+  text-align: center;
+  background: #96b4ec;
 }
 header h1 {
   font-family: "neuropol", sans-serif;
@@ -51,15 +56,9 @@ header h1::before {
   content: url("img/logo.png");
 }
 
-#main-wrapper {
-  flex: 1;
-  display: flex;
-  flex-flow: column;
-}
-
 nav {
   position: relative;
-  order: 1;
+  order: 2;
   background: #C1D3F4;
 }
 nav h3 {
@@ -110,7 +109,7 @@ nav #menu_general_button.developpe {
 }
 
 main {
-  order: 2;
+  order: 3;
   flex: 1;
   background: #ecf2fc;
   padding: 10px;
@@ -132,7 +131,7 @@ main #signature {
   margin: 30px 0 10px;
 }
 main h2 {
-  border-bottom: 5px groove yellow;
+  border-bottom: 5px solid #9595ff;
   margin-bottom: 20px;
 }
 main p, main ul {
@@ -204,18 +203,19 @@ main #grande_photo {
 }
 
 aside {
-  order: 3;
+  order: 4;
   background-color: #C1D3F4;
   padding: 10px;
 }
-aside div div {
+aside div {
   text-align: center;
 }
-aside * + p, aside * + blockquote, aside div {
+aside * + p, aside * + blockquote {
   margin-top: 15px;
 }
 
 footer {
+  order: 5;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -276,23 +276,16 @@ hr {
 }
 
 @media (min-width: 640px) {
-  aside > div {
+  aside div {
     display: flex;
     align-items: center;
     margin-top: 0;
   }
-  aside > div div {
+  aside div div {
     margin: 15px 15px 0 0;
   }
 }
 @media (min-width: 768px) {
-  body {
-    min-height: calc(100vh - 20px);
-    margin: 10px;
-    box-shadow: 0 0 10px black;
-    background: linear-gradient(to top left, #C1D3F4, #9595ff, #3f77dd);
-  }
-
   nav {
     border-top: none;
   }
@@ -310,6 +303,7 @@ hr {
     font-weight: bold;
     color: white;
     border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
     border-right: 2px solid rgba(0, 0, 0, 0.1);
   }
   nav ul li a:link, nav ul li a:visited {
@@ -317,18 +311,10 @@ hr {
   }
   nav ul li a:hover {
     background-color: #96b4ec;
+    border-left: 2px solid #96b4ec;
   }
   nav ul li + li {
     margin-top: 0;
-  }
-  nav ul li + li a {
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
-  }
-  nav ul li + li a:hover {
-    border-left: 2px solid #96b4ec;
-  }
-  nav ul li:last-child a {
-    border-right: none;
   }
 
   .photo {
@@ -336,9 +322,16 @@ hr {
     margin-right: 15px;
   }
 
-  main {
-    height: 100%;
+  header {
+    height: 162px;
+    overflow: hidden;
+    background: url("img/banniere.png") no-repeat center #96b4ec;
   }
+  header h1::before {
+    height: 162px;
+    content: " ";
+  }
+
   main #galeries {
     flex-flow: row;
     justify-content: space-around;
@@ -372,62 +365,17 @@ hr {
     border-right: none;
   }
 
-  body {
-    border-radius: 10px;
-  }
-
-  header {
-    border-radius: 10px 10px 0 0;
-  }
-
   footer {
-    border-radius: 0 0 10px 10px;
     flex-flow: row;
   }
 }
 @media (min-width: 1024px) {
-  header {
-    height: 162px;
-    overflow: hidden;
-    background: url("img/banniere.png") no-repeat center #96b4ec;
-  }
-  header h1::before {
-    height: 162px;
-    content: " ";
+  header, nav, main, aside, footer {
+    padding-left: calc((100% - 1024px) / 2);
+    padding-right: calc((100% - 1024px) / 2);
   }
 
-  #main-wrapper {
-    flex-flow: row wrap;
-  }
-
-  nav {
-    flex: 0 1 100%;
-  }
-
-  main {
-    flex: 1;
-    border-right: 2px solid rgba(0, 0, 0, 0.1);
-  }
-  main #frise_presentation {
-    max-width: 782px;
-  }
-
-  aside {
-    width: 200px;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
-    padding-top: 40px;
-  }
-  aside > div {
-    display: initial;
-    margin-top: 0;
-  }
-  aside > div div {
-    margin: 15px 0 0;
-  }
-}
-@media (min-width: 1280px) {
-  body {
-    max-width: 1260px;
-    margin: 10px auto;
+  nav ul li:first-child {
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
   }
 }
