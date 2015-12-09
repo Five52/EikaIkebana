@@ -190,10 +190,11 @@ main #galeries blockquote footer {
   background-color: transparent;
   text-align: right;
   font-style: italic;
+  font-size: initial;
 }
 main #mini-galerie {
   width: 100%;
-  height: 186px;
+  height: 187bpx;
   overflow: auto;
   margin-bottom: 20px;
   text-align: center;
@@ -349,6 +350,9 @@ hr {
   }
   main #galeries section + section {
     margin-top: 0;
+  }
+  main #galeries blockquote footer {
+    padding: 0;
   }
 
   footer {
