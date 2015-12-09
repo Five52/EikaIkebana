@@ -194,7 +194,7 @@ main #galeries blockquote footer {
 }
 main #mini-galerie {
   width: 100%;
-  height: 187bpx;
+  height: 187px;
   overflow: auto;
   margin-bottom: 20px;
   text-align: center;
@@ -339,16 +339,16 @@ hr {
     justify-content: space-around;
     align-items: center;
   }
-  main #galeries section {
+  main #galeries > div {
     margin-left: 10px;
   }
-  main #galeries section:first-child {
+  main #galeries > div:first-child {
     order: 10;
   }
-  main #galeries section:nth-child(2) {
+  main #galeries > div:nth-child(2) {
     margin-left: 0;
   }
-  main #galeries section + section {
+  main #galeries > div + div {
     margin-top: 0;
   }
   main #galeries blockquote footer {
