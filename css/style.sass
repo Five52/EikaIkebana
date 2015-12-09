@@ -179,7 +179,7 @@ main
 
 	#mini-galerie
 		width: 100%
-		height: 187px
+		height: 186px
 		overflow: auto
 		margin-bottom: 20px
 		text-align: center
@@ -315,9 +315,11 @@ hr
 					margin-top: 0
 
 	footer
+		flex-flow: row
+		justify-content: center
 		border-top: none
 		section
-			flex: initial
+			flex: 0 1 auto
 			border-top: 2px solid rgba(255,255,255,0.1)
 			border-right: 2px solid rgba(0,0,0,0.1)
 
@@ -325,10 +327,8 @@ hr
 				border-left: 2px solid rgba(255,255,255,0.1)
 
 			&:last-child
+				flex: 0 1 auto
 				border-right: none
-
-	footer
-		flex-flow: row
 
 @media (min-width: 1024px)
 	header, nav, aside, footer
