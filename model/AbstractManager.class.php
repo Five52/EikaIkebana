@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Classe abstraite pour les gestionnaires de base de données
+ */
 abstract class AbstractManager {
 
 	protected $pdo;

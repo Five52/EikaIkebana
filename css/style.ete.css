@@ -50,11 +50,11 @@ header {
   order: 1;
   padding: 10px;
   text-align: center;
-  background: #6a4b42;
+  background: #96b4ec;
 }
 header h1 {
   font-family: "neuropol", sans-serif;
-  text-shadow: 0 2px 2px rgba(255, 214, 201, 0.5), 0 -2px 2px rgba(255, 214, 201, 0.5);
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5), 0 -2px 2px rgba(255, 255, 255, 0.5);
 }
 header h1::before {
   display: block;
@@ -66,7 +66,7 @@ header h1::before {
 nav {
   position: relative;
   order: 2;
-  background: #8A6155;
+  background: #C1D3F4;
 }
 nav h3 {
   padding: 7px;
@@ -88,10 +88,10 @@ nav ul li a {
 nav ul li a:link, nav ul li a:visited {
   text-decoration: none;
   color: black;
-  background-color: #9a6c5f;
+  background-color: #d7e2f8;
 }
 nav ul li a:hover {
-  background-color: #8A6155;
+  background-color: #C1D3F4;
 }
 nav > :first-child {
   position: relative;
@@ -118,7 +118,7 @@ nav #menu_general_button.developpe {
 main {
   order: 3;
   flex: 1;
-  background: #a57a6d;
+  background: #ecf2fc;
   padding: 10px;
 }
 main #frise_presentation {
@@ -138,7 +138,7 @@ main #signature {
   margin: 30px 0 10px;
 }
 main h2 {
-  border-bottom: 5px solid #ffbda8;
+  border-bottom: 5px solid #9595ff;
   margin-bottom: 20px;
 }
 main p, main ul {
@@ -157,8 +157,8 @@ main section#expositions ul li + li {
 main section h3 {
   margin-bottom: 15px;
   padding-left: 5px;
-  background-color: #d19683;
-  border-left: 5px solid #c06e54;
+  background-color: #d5d5ff;
+  border-left: 5px solid #9595ff;
 }
 main section h3 ~ * {
   padding-left: 15px;
@@ -187,14 +187,14 @@ main #galeries > div div + div {
 main #galeries > div div a {
   display: block;
   padding: 5px;
-  border: 1px solid #2b1e1b;
+  border: 1px solid #3f77dd;
 }
 main #galeries > div div a:link, main #galeries > div div a:visited {
   text-decoration: none;
-  background-color: #8A6155;
+  background-color: #C1D3F4;
 }
 main #galeries > div div a:hover {
-  background-color: #4b352e;
+  background-color: #6a96e5;
 }
 main #galeries blockquote footer {
   background-color: transparent;
@@ -216,7 +216,7 @@ main #grande_photo {
 
 aside {
   order: 4;
-  background-color: #8A6155;
+  background-color: #C1D3F4;
   padding: 10px;
 }
 aside div {
@@ -232,7 +232,7 @@ footer {
   flex-flow: row wrap;
   justify-content: space-around;
   font-size: 13px;
-  background: #6a4b42;
+  background: #96b4ec;
 }
 footer ul {
   list-style: none;
@@ -267,7 +267,7 @@ a {
   transition: 0.3s;
 }
 a:link, a:visited {
-  color: #ffd9cd;
+  color: #14346f;
 }
 a:hover {
   text-decoration: none;
@@ -319,11 +319,11 @@ hr {
     border-right: 2px solid rgba(0, 0, 0, 0.1);
   }
   nav ul li a:link, nav ul li a:visited {
-    background-color: #8A6155;
+    background-color: #C1D3F4;
   }
   nav ul li a:hover {
-    background-color: #6a4b42;
-    border-left: 2px solid #6a4b42;
+    background-color: #96b4ec;
+    border-left: 2px solid #96b4ec;
   }
   nav ul li + li {
     margin-top: 0;
@@ -337,7 +337,7 @@ hr {
   header {
     height: 162px;
     overflow: hidden;
-    background: url("img/banniere.png") no-repeat center #6a4b42;
+    background: url("img/banniere.png") no-repeat center #96b4ec;
   }
   header h1::before {
     height: 162px;

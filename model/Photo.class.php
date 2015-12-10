@@ -1,6 +1,8 @@
 <?php
 
-// Classe représentant une photo
+/**
+ * Classe représentant une photo
+ */
 class Photo {
 
 	protected $id;
@@ -13,8 +15,11 @@ class Photo {
 		$this->hydrate($valeurs);
 	}
 
-	// Fonction d'hydratation de la classe
-	// Permet de remplir l'objet avec les données fournies
+	/**
+	 * Fonction d'hydratation de la classe
+	 * Permet de remplir l'objet avec les données fournies
+	 * @param  array  $donnees données de l'objet présentes en base de données
+	 */
 	public function hydrate(array $donnees) {
 		foreach ($donnees as $attribut => $valeur) {
 			$attributFormate = '';
@@ -31,7 +36,6 @@ class Photo {
 	public function getId() {
 		return $this->id;
 	}
-	
 	public function setId($id) {
 		$this->id = $id;
 	}

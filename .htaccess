@@ -3,6 +3,7 @@ Options -Indexes
 	order allow,deny
 	deny from all
 </Files>
+RedirectMatch 404 /.git
 RedirectMatch 404 /config
 RedirectMatch 404 /data
 RedirectMatch 404 /handler

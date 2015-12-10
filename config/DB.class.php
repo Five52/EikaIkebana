@@ -1,6 +1,9 @@
 <?php
 require_once 'config/mysql_config.php';
 
+/**
+ * Singleton gérant PDO
+ */
 class DB {
 
 	static private $instance = null;

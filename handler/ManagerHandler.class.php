@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Gestionnaire des managers
+ */
 class ManagerHandler {
 
 	/**

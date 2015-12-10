@@ -1,9 +1,10 @@
 <?php
-require_once 'handler/twig.php';
-require_once 'handler/routes.php';
-require_once 'handler/saisons.php';
+require_once 'config/routes.php';
 require_once 'config/DB.class.php';
 require_once 'handler/ManagerHandler.class.php';
+require_once 'handler/twig.php';
+
+// Nettoyage de la requête
 
 $request = isset($_GET['request']) ? $_GET['request'] : '/';
 $requestExploded = explode('/', ltrim($request, '/'));
@@ -27,11 +28,15 @@ if (!empty($param)) {
 	$action .= '/{id}';
 }
 
+// Récupération de la fonction liée à la route à lancer
+
 if (array_key_exists($action, $routes)) {
 	$routes[$action]($param);
 } else {
 	erreur404();
 }
+
+// Fonctions liées aux routes
 
 function index() {
 	echo Twig::create()->render('index.html.twig', [
