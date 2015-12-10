@@ -1,5 +1,4 @@
 vendor/
-img/photos/
 *.swp
 composer.lock
 config/mysql_config.php
