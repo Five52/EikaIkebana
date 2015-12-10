@@ -39,18 +39,18 @@ if (array_key_exists($action, $routes)) {
 // Fonctions liées aux routes
 
 function index() {
-	echo Twig::create()->render('index.html.twig', [
+	echo Twig::get()->render('index.html.twig', [
 		'saison' => 'ete'
 	]);
 }
 
 function activites() {
-	echo Twig::create()->render('activites.html.twig');
+	echo Twig::get()->render('activites.html.twig');
 }
 
 function galeries() {
 	$galeries = ManagerHandler::get('galeries')->getGaleries();
-	echo Twig::create()->render('galeries.html.twig', [
+	echo Twig::get()->render('galeries.html.twig', [
 		'galeries' => $galeries
 	]);
 }
@@ -71,7 +71,7 @@ function galerie($id) {
 		return;
 	}
 
-	echo Twig::create()->render('galerie.html.twig', [
+	echo Twig::get()->render('galerie.html.twig', [
 		'galerie' => $galerie,
 		'photos' => $photos,
 		'photo1' => $photos[0]
@@ -79,13 +79,17 @@ function galerie($id) {
 }
 
 function partager_lart() {
-	echo Twig::create()->render('partager_lart.html.twig');
+	echo Twig::get()->render('partager_lart.html.twig');
+}
+
+function contact() {
+	echo Twig::get()->render('contact.html.twig');
 }
 
 function archives() {
-	echo Twig::create()->render('archives.html.twig');
+	echo Twig::get()->render('archives.html.twig');
 }
 
 function erreur404() {
-	echo Twig::create()->render('404.html.twig');
+	echo Twig::get()->render('404.html.twig');
 }

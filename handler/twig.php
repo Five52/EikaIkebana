@@ -5,7 +5,7 @@ require_once 'vendor/autoload.php';
  * Classe de création du moteur de template Twig
  */
 class Twig {
-	static public function create() {
+	static public function get() {
 		$loader = new Twig_Loader_Filesystem('view/');
 		$twig = new Twig_Environment($loader, [
 			'cache' => false
