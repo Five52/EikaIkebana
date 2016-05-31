@@ -3,34 +3,34 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}
-	Galeries - {{ parent() }}
+    Galeries - {{ parent() }}
 {% endblock %}
 
 {% block main %}
-	<h2>Galeries</h2>
-	<div id="galeries">
-		<div>
-			<blockquote>
-				" Les lotus flétris<br/>
-				L'étang semble misérable<br/>
-				Sous l'averse d'hiver. "
-				<footer>BUSON (1715 - 1783)</footer>
-			</blockquote>
-		</div>
-		<div>
-			{% for galerie in galeries if galerie.type == 'classique' %}
-				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
-			{% endfor %}
-		</div>
-		<div>
-			{% for galerie in galeries if galerie.type == 'exposition' %}
-				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
-			{% endfor %}
-		</div>
-		<div>
-			{% for galerie in galeries if galerie.type == 'stage' %}
-				<div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
-			{% endfor %}
-		</div>
-	</div>
+    <h2>Galeries</h2>
+    <div id="galeries">
+        <div>
+            <blockquote>
+                " Les lotus flétris<br/>
+                L'étang semble misérable<br/>
+                Sous l'averse d'hiver. "
+                <footer>BUSON (1715 - 1783)</footer>
+            </blockquote>
+        </div>
+        <div>
+            {% for galerie in galeries if galerie.type == 'classique' %}
+                <div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
+            {% endfor %}
+        </div>
+        <div>
+            {% for galerie in galeries if galerie.type == 'exposition' %}
+                <div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
+            {% endfor %}
+        </div>
+        <div>
+            {% for galerie in galeries if galerie.type == 'stage' %}
+                <div><a href="{{ root }}galeries/{{ galerie.id }}">{{ galerie.nom }}{% if galerie.date is not null %} - {{ galerie.date | date('Y') }}{% endif %}</a></div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

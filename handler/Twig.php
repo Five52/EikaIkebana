@@ -4,8 +4,10 @@ require_once 'vendor/autoload.php';
 /**
  * Classe de création du moteur de template Twig
  */
-class Twig {
-    static public function get() {
+class Twig
+{
+    public static function get()
+    {
         $loader = new Twig_Loader_Filesystem('view/');
         $twig = new Twig_Environment($loader, [
             'cache' => false
@@ -18,4 +20,16 @@ class Twig {
         $twig->addGlobal('saison', 'ete');
         return $twig;
     }
+
+    protected static function getSeason()
+    {
+        $dateCourante = new DateTime();
+        $annee = date('Y');
+        $dateEte = new DateTime($annee.'-02-01');
+        $dateHiver = new DateTime($annee.'-11-15');
+
+        return ($dateCourante >= $dateEte && $dateCourante < $dateHiver)
+            ? 'ete'
+            : 'hiver';
+        }
 }

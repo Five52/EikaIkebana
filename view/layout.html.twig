@@ -3,19 +3,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<title>{% block title %}Atelier Eika Ikebana Dijon{% endblock %}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="{{ root }}css/style.{{ saison }}.min.css">
+    <meta charset="UTF-8">
+    <title>{% block title %}Atelier Eika Ikebana Dijon{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ root }}css/style.{{ saison }}.min.css">
 </head>
 <body>
-	{% include 'partials/header.html.twig' %}
-	<main>
-		{% block main %}{% endblock %}
-	</main>
-	{% include 'partials/nav.html.twig' %}
-	{% block aside %}{% endblock %}
-	{% include 'partials/footer.html.twig' %}
-	{% include 'partials/scripts.html.twig' %}
+    {% include 'partials/header.html.twig' %}
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    {% include 'partials/nav.html.twig' %}
+    {% block aside %}{% endblock %}
+    {% include 'partials/footer.html.twig' %}
+    {% include 'partials/scripts.html.twig' %}
 </body>
 </html>
