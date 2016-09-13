@@ -24,7 +24,7 @@ switch(count($requestExploded)) {
 }
 
 if (!empty($param)) {
-    $action .= '/{id}';
+    $action .= '/{slug}';
 }
 
 // Récupération de la fonction liée à la route à lancer
@@ -55,10 +55,9 @@ function galeries()
     ]);
 }
 
-function galerie($id)
+function galerie($slug)
 {
-    $id = (int) $id;
-    $galerie = ManagerHandler::get('galeries')->get($id);
+    $galerie = ManagerHandler::get('galeries')->get($slug);
 
     if($galerie === null) {
         erreur404();

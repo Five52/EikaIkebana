@@ -29,16 +29,16 @@ class GaleriesManager extends AbstractManager
     }
 
     /**
-     * Récupère la galerie ayant pour id l'id fournie
-     * @param  int $id     id de la galerie
+     * Récupère la galerie ayant pour slug le slug fourni
+     * @param  string  $slug     slug de la galerie
      * @return Galerie     la galerie
      */
-    public function get($id)
+    public function get($slug)
     {
-        $req = 'select * from Galerie where id = :id';
+        $req = 'select * from Galerie where slug = :slug';
         $stmt = $this->pdo->prepare($req);
         $data = [
-            'id' => $id
+            'slug' => $slug
         ];
         $stmt->execute($data);
         $res = $stmt->fetch();

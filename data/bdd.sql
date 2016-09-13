@@ -3,25 +3,28 @@ drop table if exists Galerie, Photo ;
 create table Galerie (
     id integer primary key auto_increment,
     nom varchar(50),
+    slug varchar(50) unique,
     date Date,
     type varchar(30),
     constraint check_type check (type in ('classique', 'exposition', 'stage'))
 );
 
-insert into Galerie (id, type, nom, date) values
-    (1, 'classique', 'Bouquets libres', ''),
-    (2, 'classique', 'Galerie des Elèves', ''),
+insert into Galerie (id, type, nom, slug, date) values
+    (1, 'classique', 'Bouquets libres', 'bouquets-libres', ''),
+    (2, 'classique', 'Galerie des Elèves', 'eleves', ''),
 
-    (3, 'exposition', '150ème anniversaire', '2008-10-09'),
-    (4, 'exposition', 'Cellier de Clairvaux', '2012-09-01'),
-    (5, 'exposition', 'Notre-Dame', '2013-12-01'),
-    (6, 'exposition', 'Sainte-Bernadette', '2014-01-01'),
+    (3, 'exposition', '150ème anniversaire', '150eme-anniversaire-2008', '2008-10-09'),
+    (4, 'exposition', 'Cellier de Clairvaux', 'cellier-clairvaux-2012','2012-09-01'),
+    (5, 'exposition', 'Notre-Dame', 'notre-dame-2013', '2013-12-01'),
+    (6, 'exposition', 'Sainte-Bernadette', 'sainte-bernadette-2014', '2014-01-01'),
 
-    (7, 'stage', 'Maître Fukushima', '2008-06-01'),
-    (8, 'stage', 'Nouvel An', '2010-01-01'),
-    (9, 'stage', 'Fêtes de fin d''année', '2011-01-01'),
-    (10, 'stage', 'Eté', '2012-07-01'),
-    (11, 'stage', 'Pâques', '2013-04-01')
+    (7, 'stage', 'Maître Fukushima', 'maitre-fukushima-2008', '2008-06-01'),
+    (8, 'stage', 'Nouvel An', 'nouvel-an-2010', '2010-01-01'),
+    (9, 'stage', 'Fêtes de fin d''année', 'fetes-2011', '2011-01-01'),
+    (10, 'stage', 'Eté', 'ete-2012', '2012-07-01'),
+    (11, 'stage', 'Pâques', 'paques-2013', '2013-04-01'),
+
+    (12, 'exposition', 'Cellier de Clairvaux', 'cellier-clairvaux-2016', '2016-02-01')
 ;
 
 create table Photo (
@@ -262,5 +265,36 @@ insert into Photo (idGalerie, ordre, source, sourceMiniature, alt, titre) values
     (11, 11, 'img/photos/stage_paques_2013/ikebana4.jpg', 'img/photos/stage_paques_2013/ikebana4_detail.jpg', 'ikebana4', 'Bouquet Pascale'),
     (11, 12, 'img/photos/stage_paques_2013/ikebana5.jpg', 'img/photos/stage_paques_2013/ikebana5_detail.jpg', 'ikebana5', 'Bouquet Delphine'),
     (11, 13, 'img/photos/stage_paques_2013/ikebana6.jpg', 'img/photos/stage_paques_2013/ikebana6_detail.jpg', 'ikebana6', 'Bouquet Huguette'),
-    (11, 14, 'img/photos/stage_paques_2013/ikebana7.jpg', 'img/photos/stage_paques_2013/ikebana7_detail.jpg', 'ikebana7', 'Bouquet Sylvette')
+    (11, 14, 'img/photos/stage_paques_2013/ikebana7.jpg', 'img/photos/stage_paques_2013/ikebana7_detail.jpg', 'ikebana7', 'Bouquet Sylvette'),
+
+    (12, 1, 'img/photos/cellier_clairvaux_2016/photo1.jpg', 'img/photos/cellier_clairvaux_2016/photo1_detail.jpg', 'photo1', 'Photo 1'),
+    (12, 2, 'img/photos/cellier_clairvaux_2016/photo2.jpg', 'img/photos/cellier_clairvaux_2016/photo2_detail.jpg', 'photo2', 'Photo 2'),
+    (12, 3, 'img/photos/cellier_clairvaux_2016/photo3.jpg', 'img/photos/cellier_clairvaux_2016/photo3_detail.jpg', 'photo3', 'Photo 3'),
+    (12, 4, 'img/photos/cellier_clairvaux_2016/photo4.jpg', 'img/photos/cellier_clairvaux_2016/photo4_detail.jpg', 'photo4', 'Photo 4'),
+    (12, 5, 'img/photos/cellier_clairvaux_2016/photo5.jpg', 'img/photos/cellier_clairvaux_2016/photo5_detail.jpg', 'photo5', 'Photo 5'),
+    (12, 6, 'img/photos/cellier_clairvaux_2016/photo6.jpg', 'img/photos/cellier_clairvaux_2016/photo6_detail.jpg', 'photo6', 'Photo 6'),
+    (12, 7, 'img/photos/cellier_clairvaux_2016/photo7.jpg', 'img/photos/cellier_clairvaux_2016/photo7_detail.jpg', 'photo7', 'Photo 7'),
+    (12, 8, 'img/photos/cellier_clairvaux_2016/photo8.jpg', 'img/photos/cellier_clairvaux_2016/photo8_detail.jpg', 'photo8', 'Photo 8'),
+    (12, 9, 'img/photos/cellier_clairvaux_2016/photo9.jpg', 'img/photos/cellier_clairvaux_2016/photo9_detail.jpg', 'photo9', 'Photo 9'),
+    (12, 10, 'img/photos/cellier_clairvaux_2016/photo10.jpg', 'img/photos/cellier_clairvaux_2016/photo10_detail.jpg', 'photo10', 'Photo 10'),
+    (12, 11, 'img/photos/cellier_clairvaux_2016/photo11.jpg', 'img/photos/cellier_clairvaux_2016/photo11_detail.jpg', 'photo11', 'Photo 11'),
+    (12, 12, 'img/photos/cellier_clairvaux_2016/photo12.jpg', 'img/photos/cellier_clairvaux_2016/photo12_detail.jpg', 'photo12', 'Photo 12'),
+    (12, 13, 'img/photos/cellier_clairvaux_2016/photo13.jpg', 'img/photos/cellier_clairvaux_2016/photo13_detail.jpg', 'photo13', 'Photo 13'),
+    (12, 14, 'img/photos/cellier_clairvaux_2016/photo14.jpg', 'img/photos/cellier_clairvaux_2016/photo14_detail.jpg', 'photo14', 'Photo 14'),
+    (12, 15, 'img/photos/cellier_clairvaux_2016/photo15.jpg', 'img/photos/cellier_clairvaux_2016/photo15_detail.jpg', 'photo15', 'Photo 15'),
+    (12, 16, 'img/photos/cellier_clairvaux_2016/photo16.jpg', 'img/photos/cellier_clairvaux_2016/photo16_detail.jpg', 'photo16', 'Photo 16'),
+    (12, 17, 'img/photos/cellier_clairvaux_2016/photo17.jpg', 'img/photos/cellier_clairvaux_2016/photo17_detail.jpg', 'photo17', 'Photo 17'),
+    (12, 18, 'img/photos/cellier_clairvaux_2016/photo18.jpg', 'img/photos/cellier_clairvaux_2016/photo18_detail.jpg', 'photo18', 'Photo 18'),
+    (12, 19, 'img/photos/cellier_clairvaux_2016/photo19.jpg', 'img/photos/cellier_clairvaux_2016/photo19_detail.jpg', 'photo19', 'Photo 19'),
+    (12, 20, 'img/photos/cellier_clairvaux_2016/photo20.jpg', 'img/photos/cellier_clairvaux_2016/photo20_detail.jpg', 'photo20', 'Photo 20'),
+    (12, 21, 'img/photos/cellier_clairvaux_2016/photo21.jpg', 'img/photos/cellier_clairvaux_2016/photo21_detail.jpg', 'photo21', 'Photo 21'),
+    (12, 22, 'img/photos/cellier_clairvaux_2016/photo22.jpg', 'img/photos/cellier_clairvaux_2016/photo22_detail.jpg', 'photo22', 'Photo 22'),
+    (12, 23, 'img/photos/cellier_clairvaux_2016/photo23.jpg', 'img/photos/cellier_clairvaux_2016/photo23_detail.jpg', 'photo23', 'Photo 23'),
+    (12, 24, 'img/photos/cellier_clairvaux_2016/photo24.jpg', 'img/photos/cellier_clairvaux_2016/photo24_detail.jpg', 'photo24', 'Photo 24'),
+    (12, 25, 'img/photos/cellier_clairvaux_2016/photo25.jpg', 'img/photos/cellier_clairvaux_2016/photo25_detail.jpg', 'photo25', 'Photo 25'),
+    (12, 26, 'img/photos/cellier_clairvaux_2016/photo26.jpg', 'img/photos/cellier_clairvaux_2016/photo26_detail.jpg', 'photo26', 'Photo 26'),
+    (12, 27, 'img/photos/cellier_clairvaux_2016/photo27.jpg', 'img/photos/cellier_clairvaux_2016/photo27_detail.jpg', 'photo27', 'Photo 27'),
+    (12, 28, 'img/photos/cellier_clairvaux_2016/photo28.jpg', 'img/photos/cellier_clairvaux_2016/photo28_detail.jpg', 'photo28', 'Photo 28'),
+    (12, 29, 'img/photos/cellier_clairvaux_2016/photo29.jpg', 'img/photos/cellier_clairvaux_2016/photo29_detail.jpg', 'photo29', 'Photo 29')
+
 ;

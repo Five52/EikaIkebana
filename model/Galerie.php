@@ -7,6 +7,7 @@ class Galerie
 {
     protected $id;
     protected $nom;
+    protected $slug;
     protected $date;
     protected $type;
 
@@ -50,6 +51,15 @@ class Galerie
     public function setNom($nom)
     {
         $this->nom = $nom;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
     public function getDate()
