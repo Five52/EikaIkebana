@@ -14,7 +14,7 @@ insert into Galerie (id, type, nom, slug, date) values
     (2, 'classique', 'Galerie des Elèves', 'eleves', ''),
 
     (3, 'exposition', '150ème anniversaire', '150eme-anniversaire-2008', '2008-10-09'),
-    (4, 'exposition', 'Cellier de Clairvaux', 'cellier-clairvaux-2012','2012-09-01'),
+    (4, 'exposition', 'Cellier de Clairvaux', 'cellier-clairvaux-2012', '2012-09-01'),
     (5, 'exposition', 'Notre-Dame', 'notre-dame-2013', '2013-12-01'),
     (6, 'exposition', 'Sainte-Bernadette', 'sainte-bernadette-2014', '2014-01-01'),
 
@@ -24,7 +24,14 @@ insert into Galerie (id, type, nom, slug, date) values
     (10, 'stage', 'Eté', 'ete-2012', '2012-07-01'),
     (11, 'stage', 'Pâques', 'paques-2013', '2013-04-01'),
 
-    (12, 'exposition', 'Cellier de Clairvaux', 'cellier-clairvaux-2016', '2016-02-01')
+    (12, 'exposition', 'Cellier de Clairvaux', 'cellier-clairvaux-2016', '2016-02-01'),
+    (13, 'exposition', 'Saint Fiacre', 'saint-fiacre-2015', '2015-09-01'),
+    (14, 'exposition', 'Chailly', 'chailly-2014', '2014-08-01'),
+    (15, 'exposition', 'Le Centre', 'le-centre-2014', '2014-09-01'),
+    (16, 'exposition', 'Genlis', 'genlis-2013', '2013-06-01'),
+    (17, 'exposition', 'La Ninette', 'la-ninette-2013', '2013-06-01'),
+    (18, 'exposition', 'Oyé', 'oye-2012', '2012-06-01'),
+    (19, 'exposition', 'Gueugnon', 'gueugnon-2012', '2012-12-01')
 ;
 
 create table Photo (
@@ -295,6 +302,38 @@ insert into Photo (idGalerie, ordre, source, sourceMiniature, alt, titre) values
     (12, 26, 'img/photos/cellier_clairvaux_2016/photo26.jpg', 'img/photos/cellier_clairvaux_2016/photo26_detail.jpg', 'photo26', 'Photo 26'),
     (12, 27, 'img/photos/cellier_clairvaux_2016/photo27.jpg', 'img/photos/cellier_clairvaux_2016/photo27_detail.jpg', 'photo27', 'Photo 27'),
     (12, 28, 'img/photos/cellier_clairvaux_2016/photo28.jpg', 'img/photos/cellier_clairvaux_2016/photo28_detail.jpg', 'photo28', 'Photo 28'),
-    (12, 29, 'img/photos/cellier_clairvaux_2016/photo29.jpg', 'img/photos/cellier_clairvaux_2016/photo29_detail.jpg', 'photo29', 'Photo 29')
+    (12, 29, 'img/photos/cellier_clairvaux_2016/photo29.jpg', 'img/photos/cellier_clairvaux_2016/photo29_detail.jpg', 'photo29', 'Photo 29'),
+    
+    (13, 1, 'img/photos/saint_fiacre_2016/photo1.jpg', 'img/photos/saint_fiacre_2016/photo1_detail.jpg', 'photo1', 'Photo 1'),
+    (13, 2, 'img/photos/saint_fiacre_2016/photo2.jpg', 'img/photos/saint_fiacre_2016/photo2_detail.jpg', 'photo2', 'Photo 2'),
+    (13, 3, 'img/photos/saint_fiacre_2016/photo3.jpg', 'img/photos/saint_fiacre_2016/photo3_detail.jpg', 'photo3', 'Photo 3'),
 
+    (14, 1, 'img/photos/chailly_2014/photo1.jpg', 'img/photos/chailly_2014/photo1_detail.jpg', 'photo1', 'Photo 1'),
+    (14, 2, 'img/photos/chailly_2014/photo2.jpg', 'img/photos/chailly_2014/photo2_detail.jpg', 'photo2', 'Photo 2'),
+
+    (15, 1, 'img/photos/le_centre_2014/photo1.jpg', 'img/photos/le_centre_2014/photo1.jpg', 'photo1', 'Photo 1'),
+    (15, 2, 'img/photos/le_centre_2014/photo2.jpg', 'img/photos/le_centre_2014/photo2.jpg', 'photo2', 'Photo 2'),
+
+    (16, 1, 'img/photos/genlis_2013/photo1.jpg', 'img/photos/genlis_2013/photo1.jpg', 'photo1', 'Photo 1'),
+    (16, 2, 'img/photos/genlis_2013/photo2.jpg', 'img/photos/genlis_2013/photo2.jpg', 'photo2', 'Photo 2'),
+
+    (17, 1, 'img/photos/la_ninette_2013/photo1.jpg', 'img/photos/la_ninette_2013/photo1.jpg', 'photo1', 'Photo 1'),
+    (17, 2, 'img/photos/la_ninette_2013/photo2.jpg', 'img/photos/la_ninette_2013/photo2.jpg', 'photo2', 'Photo 2'),
+    (17, 3, 'img/photos/la_ninette_2013/photo3.jpg', 'img/photos/la_ninette_2013/photo3.jpg', 'photo3', 'Photo 3'),
+    (17, 4, 'img/photos/la_ninette_2013/photo4.jpg', 'img/photos/la_ninette_2013/photo4.jpg', 'photo4', 'Photo 4'),
+    (17, 5, 'img/photos/la_ninette_2013/photo5.jpg', 'img/photos/la_ninette_2013/photo5.jpg', 'photo5', 'Photo 5'),
+    (17, 6, 'img/photos/la_ninette_2013/photo6.jpg', 'img/photos/la_ninette_2013/photo6.jpg', 'photo6', 'Photo 6'),
+    (17, 7, 'img/photos/la_ninette_2013/photo7.jpg', 'img/photos/la_ninette_2013/photo7.jpg', 'photo7', 'Photo 7'),
+    (17, 8, 'img/photos/la_ninette_2013/photo8.jpg', 'img/photos/la_ninette_2013/photo8.jpg', 'photo8', 'Photo 8'),
+
+    (18, 1, 'img/photos/oye_2012/photo1.jpg', 'img/photos/oye_2012/photo1_detail.jpg', 'photo1', 'Photo 1'),
+    (18, 2, 'img/photos/oye_2012/photo2.jpg', 'img/photos/oye_2012/photo2_detail.jpg', 'photo2', 'Photo 2'),
+    (18, 3, 'img/photos/oye_2012/photo3.jpg', 'img/photos/oye_2012/photo3_detail.jpg', 'photo3', 'Photo 3'),
+    (18, 4, 'img/photos/oye_2012/photo4.jpg', 'img/photos/oye_2012/photo4_detail.jpg', 'photo4', 'Photo 4'),
+    (18, 5, 'img/photos/oye_2012/photo5.jpg', 'img/photos/oye_2012/photo5_detail.jpg', 'photo5', 'Photo 5'),
+    (18, 6, 'img/photos/oye_2012/photo6.jpg', 'img/photos/oye_2012/photo6_detail.jpg', 'photo6', 'Photo 6'),
+    
+    (19, 1, 'img/photos/gueugnon_2012/photo1.jpg', 'img/photos/gueugnon_2012/photo1_detail.jpg', 'photo1', 'Photo 1'),
+    (19, 2, 'img/photos/gueugnon_2012/photo2.jpg', 'img/photos/gueugnon_2012/photo2_detail.jpg', 'photo2', 'Photo 2'),
+    (19, 3, 'img/photos/gueugnon_2012/photo3.jpg', 'img/photos/gueugnon_2012/photo3_detail.jpg', 'photo3', 'Photo 3')
 ;
