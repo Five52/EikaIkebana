@@ -1,8 +1,7 @@
 <?php
 require_once 'config/routes.php';
-require_once 'config/DB.class.php';
-require_once 'handler/ManagerHandler.class.php';
-require_once 'handler/twig.php';
+require_once 'handler/Twig.php';
+require_once 'handler/ManagerHandler.php';
 
 // Nettoyage de la requête
 
@@ -25,11 +24,7 @@ switch(count($requestExploded)) {
 }
 
 if (!empty($param)) {
-<<<<<<< HEAD
-    $action .= '/{id}';
-=======
     $action .= '/{slug}';
->>>>>>> bd19b6d... Ajout de slugs pour les galeries
 }
 
 // Récupération de la fonction liée à la route à lancer
@@ -42,17 +37,18 @@ if (array_key_exists($action, $routes)) {
 
 // Fonctions liées aux routes
 
-function index() {
-    echo Twig::get()->render('index.html.twig', [
-        'saison' => 'ete'
-    ]);
+function index()
+{
+    echo Twig::get()->render('index.html.twig');
 }
 
-function activites() {
+function activites()
+{
     echo Twig::get()->render('activites.html.twig');
 }
 
-function galeries() {
+function galeries()
+{
     $galeries = ManagerHandler::get('galeries')->getGaleries();
     echo Twig::get()->render('galeries.html.twig', [
         'galeries' => $galeries
@@ -78,22 +74,25 @@ function galerie($slug)
     echo Twig::get()->render('galerie.html.twig', [
         'galerie' => $galerie,
         'photos' => $photos,
-        'photo1' => $photos[0]
     ]);
 }
 
-function partager_lart() {
+function partager_lart()
+{
     echo Twig::get()->render('partager_lart.html.twig');
 }
 
-function contact() {
+function contact()
+{
     echo Twig::get()->render('contact.html.twig');
 }
 
-function archives() {
+function archives()
+{
     echo Twig::get()->render('archives.html.twig');
 }
 
-function erreur404() {
+function erreur404()
+{
     echo Twig::get()->render('404.html.twig');
 }

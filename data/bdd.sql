@@ -6,7 +6,7 @@ create table Galerie (
     slug varchar(50) unique,
     date Date,
     type varchar(30),
-    constraint check_type check (type in ('classique', 'exposition', 'stage'))
+    constraint check_type check (type in ('classique', 'exposition', 'stage', 'archive'))
 );
 
 insert into Galerie (id, type, nom, slug, date) values
@@ -25,13 +25,13 @@ insert into Galerie (id, type, nom, slug, date) values
     (11, 'stage', 'Pâques', 'paques-2013', '2013-04-01'),
 
     (12, 'exposition', 'Cellier de Clairvaux', 'cellier-clairvaux-2016', '2016-02-01'),
-    (13, 'exposition', 'Saint Fiacre', 'saint-fiacre-2015', '2015-09-01'),
-    (14, 'exposition', 'Chailly', 'chailly-2014', '2014-08-01'),
-    (15, 'exposition', 'Le Centre', 'le-centre-2014', '2014-09-01'),
-    (16, 'exposition', 'Genlis', 'genlis-2013', '2013-06-01'),
-    (17, 'exposition', 'La Ninette', 'la-ninette-2013', '2013-06-01'),
-    (18, 'exposition', 'Oyé', 'oye-2012', '2012-06-01'),
-    (19, 'exposition', 'Gueugnon', 'gueugnon-2012', '2012-12-01')
+    (13, 'archive', 'Saint Fiacre', 'saint-fiacre-2015', '2015-09-01'),
+    (14, 'archive', 'Chailly', 'chailly-2014', '2014-08-01'),
+    (15, 'archive', 'Le Centre', 'le-centre-2014', '2014-09-01'),
+    (16, 'archive', 'Genlis', 'genlis-2013', '2013-06-01'),
+    (17, 'archive', 'La Ninette', 'la-ninette-2013', '2013-06-01'),
+    (18, 'archive', 'Oyé', 'oye-2012', '2012-06-01'),
+    (19, 'archive', 'Gueugnon', 'gueugnon-2012', '2012-12-01')
 ;
 
 create table Photo (
