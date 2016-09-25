@@ -1,0 +1,36 @@
+{# view/galeries.html.twig #}
+
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    Galeries - {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <h2>Galeries</h2>
+    <div id="galeries">
+        <div>
+            <blockquote>
+                " Les lotus flétris<br/>
+                L'étang semble misérable<br/>
+                Sous l'averse d'hiver. "
+                <footer>BUSON (1715 - 1783)</footer>
+            </blockquote>
+        </div>
+        <div>
+            {% for gallery in galleries if gallery.type == 'classique' %}
+                <div><a href="{{ path('gallery', {'gallery_slug': gallery.slug}) }}">{{ gallery.name }}{% if gallery.date is not null %} - {{ gallery.date | date('Y') }}{% endif %}</a></div>
+            {% endfor %}
+        </div>
+        <div>
+            {% for gallery in galleries if gallery.type == 'exposition' %}
+                <div><a href="{{ path('gallery', {'gallery_slug': gallery.slug}) }}">{{ gallery.name }}{% if gallery.date is not null %} - {{ gallery.date | date('Y') }}{% endif %}</a></div>
+            {% endfor %}
+        </div>
+        <div>
+            {% for gallery in galleries if gallery.type == 'stage' %}
+                <div><a href="{{ path('gallery', {'gallery_slug': gallery.slug}) }}">{{ gallery.name }}{% if gallery.date is not null %} - {{ gallery.date | date('Y') }}{% endif %}</a></div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{# view/galerie.html.twig #}
+
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ gallery.name }} - {{ gallery.date | date('Y') }} - {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <h2>{{ gallery.name }}{% if gallery.date is not null %} - {{ gallery.date | date('Y') }}{% endif %}</h2>
+    <div id="mini-galerie">
+        {% for picture in pictures %}
+        <a href="{{ root }}{{ picture.source }}"><img src="{{ root }}{{ picture.sourceMiniature }}" alt="{{ picture.alt }}" {% if picture.title is not empty %}title="{{ picture.title }}"{% endif %}/></a>
+        {% endfor %}
+    </div>
+    <div id="grande_photo">
+        <img src="{{ root }}{{ pictures|first.source }}" alt="Grande Photo" />
+    </div>
+{% endblock %}
