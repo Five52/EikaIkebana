@@ -1,7 +1,7 @@
 {
     "name": "eika/silex",
     "description": "Website for a french ikebana association",
-    "licence": "GPL-3.0",
+    "license": "GPL-3.0",
 
     "require": {
         "silex/silex": "~2.0",
