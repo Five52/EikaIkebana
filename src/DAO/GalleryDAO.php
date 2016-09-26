@@ -21,7 +21,7 @@ class GalleryDAO extends DAO
         $res = $stmt->fetchAll();
         $stmt->closeCursor();
 
-        $galeries = [];
+        $galleries = [];
 
         foreach ($res as $dataGallery) {
             $galleries[] = new Gallery($dataGallery);
