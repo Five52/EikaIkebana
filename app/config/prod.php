@@ -6,6 +6,6 @@ $app['db.options'] = [
     'host' => 'localhost',
     'port' => '3306',
     'dbname' => 'eika',
-    'user' => 'root',
-    'password' => ''
+    'user' => 'five',
+    'password' => 'Five5225'
 ];
