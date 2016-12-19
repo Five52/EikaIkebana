@@ -17,8 +17,13 @@ $app->get('activites', function() use ($app) {
 // Galeries page
 $app->get('galeries', function() use ($app) {
     $galleries = $app['dao.gallery']->findAll();
+    $haiku = explode("\n", file_get_contents(__DIR__.'/../views/partials/haiku.txt'));
+    foreach ($haiku as &$line) {
+        $line = trim($line);
+    }
     return $app->render('galeries.html.twig', [
-        'galleries' => $galleries
+        'galleries' => $galleries,
+        'haiku' => $haiku
     ]);
 })
 ->bind('galleries');
