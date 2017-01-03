@@ -35,7 +35,7 @@ $app->get('galeries/{gallery_slug}', function($gallery_slug) use ($app) {
         $app->abort(404, "Cette galerie n'existe pas.");
     }
 
-    $pictures = $app['dao.picture']->findAllByGallery($gallery->getId());
+    $pictures = $app['dao.picture']->findAllByGallery($gallery->getSlug());
     if ($pictures === null) {
         $app->abort(404, "Il n'y a pas de photos pour cette galerie.");
     }

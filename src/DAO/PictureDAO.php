@@ -16,7 +16,7 @@ class PictureDAO extends DAO
      */
     public function findAllByGallery($id)
     {
-        $req = 'select * from Picture where idGallery = :id order by ordre';
+        $req = 'select * from Picture where slugGallery = :id order by ordre';
         $stmt = $this->db->prepare($req);
         $data = [
             'id' => $id

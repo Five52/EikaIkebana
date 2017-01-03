@@ -7,11 +7,6 @@ use Eika\Domain\Domain;
 class Gallery extends Domain
 {
     /**
-     * @var integer
-     */
-    protected $id;
-
-    /**
      * @var string
      */
     protected $name;
@@ -31,14 +26,20 @@ class Gallery extends Domain
      */
     protected $type;
 
-    public function getId()
-    {
-        return $this->id;
-    }
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
+    /**
+     * @var int
+     */
+    protected $ordre;
+
+    /**
+     * @var string
+     */
+    protected $previous;
+
+    /**
+     * @var string
+     */
+    protected $next;
 
     public function getName()
     {
@@ -74,5 +75,32 @@ class Gallery extends Domain
     public function setType($type)
     {
         $this->type = $type;
+    }
+
+    public function getOrdre()
+    {
+        return $this->ordre;
+    }
+    public function setOrdre($ordre)
+    {
+        $this->ordre = $ordre;
+    }
+
+    public function getPrevious()
+    {
+        return $this->previous;
+    }
+    public function setPrevious($previous)
+    {
+        $this->previous = $previous;
+    }
+
+    public function getNext()
+    {
+        return $this->next;
+    }
+    public function setNext($next)
+    {
+        $this->next = $next;
     }
 }

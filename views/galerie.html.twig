@@ -7,7 +7,15 @@
 {% endblock %}
 
 {% block main %}
-    <h2>{{ gallery.name }}{% if gallery.date is not null %} - {{ gallery.date | date('Y') }}{% endif %}</h2>
+    <h2>
+        {% if gallery.previous %}
+            <a href="{{ path('gallery', {'gallery_slug': gallery.previous}) }}" title="galerie précédente"><i class="fa fa-arrow-left"></i></a>
+        {% endif %}
+        {{ gallery.name }}{% if gallery.date is not null %} - {{ gallery.date | date('Y') }}{% endif %}
+        {% if gallery.next %}
+            <a href="{{ path('gallery', {'gallery_slug': gallery.next}) }}" title="galerie suivante"><i class="fa fa-arrow-right"></i></a>
+        {% endif %}
+    </h2>
     <div id="mini-galerie">
         {% for picture in pictures %}
         <a href="{{ root }}{{ picture.source }}"><img src="{{ root }}{{ picture.sourceMiniature }}" alt="{{ picture.alt }}" {% if picture.title is not empty %}title="{{ picture.title }}"{% endif %}/></a>

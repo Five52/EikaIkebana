@@ -15,7 +15,7 @@ class GalleryDAO extends DAO
      */
     public function findAll()
     {
-        $req = 'select * from Gallery';
+        $req = 'select * from Gallery order by ordre';
         $stmt = $this->db->prepare($req);
         $stmt->execute();
         $res = $stmt->fetchAll();

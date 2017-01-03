@@ -35,8 +35,8 @@ class Picture extends Domain
     /**
      * @var integer
      */
-    protected $order;
-    
+    protected $ordre;
+
     public function getId()
     {
         return $this->id;
@@ -45,7 +45,7 @@ class Picture extends Domain
     {
         $this->id = $id;
     }
-    
+
     public function getSource()
     {
         return $this->source;
