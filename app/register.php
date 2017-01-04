@@ -40,4 +40,13 @@ $app->register(new TwigServiceProvider(), [
 ]);
 $app['twig']->addGlobal('root', str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));
 $app['twig']->addGlobal('now', date('Y-m-d H:i:s'));
-$app['twig']->addGlobal('saison', 'ete');
+
+$currentDate = new DateTime();
+$year = date('Y');
+$summerDate = new DateTime($year . '-02-01');
+$winterDate = new DateTime($year . '-11-15');
+$season = ($currentDate >= $summerDate && $currentDate <= $winterDate)
+    ? 'ete'
+    : 'hiver'
+;
+$app['twig']->addGlobal('saison', $season);
